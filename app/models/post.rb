@@ -1,3 +1,3 @@
 class Post < ApplicationRecord
-  validates_presence_of :title, :gtext
+  validates_presence_of :title, :text
 end
