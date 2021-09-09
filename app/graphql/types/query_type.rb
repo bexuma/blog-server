@@ -4,20 +4,20 @@ module Types
     include GraphQL::Types::Relay::HasNodeField
     include GraphQL::Types::Relay::HasNodesField
 
-    field :post, PostType, null: true do
+    field :get_post, PostType, null: true do
       description "Find a post by ID"
       argument :id, ID, required: true
     end
 
-    field :posts, [PostType], null: false do
+    field :get_posts, [PostType], null: false do
       description "List all posts"
     end
 
-    def post(id:)
+    def get_post(id:)
       Post.find_by_id(id)
     end
 
-    def posts
+    def get_posts
       Post.all
     end
   end
